@@ -3,6 +3,7 @@ package dhtcrawler
 import (
 	"context"
 	"net"
+  "net/netip"
 	"time"
 
 	"github.com/bitmagnet-io/bitmagnet/internal/protocol/dht/ktable"
