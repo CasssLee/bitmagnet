@@ -22,11 +22,13 @@ func (c *crawler) reseedBootstrapNodes(ctx context.Context) {
 					c.logger.Warnf("failed to resolve bootstrap node address: %s", err)
 					continue
 				}
+        
         // Normalize possible IPV4-mapped IPV6 Addr to IPV4
 				normalizedAddrPort := netip.AddrPortFrom(
 					addr.AddrPort().Addr().Unmap(),
 					uint16(addr.Port),
 				)
+        
 				select {
 				case <-ctx.Done():
 					return
